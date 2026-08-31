@@ -526,3 +526,36 @@ footer {
   .search button { padding: 14px; border-radius: 12px; width: 100%; }
   }
   
+<script>
+  // --- 1. MENÚ MÓVIL INTERACTIVO ---
+  // Seleccionamos el botón de menú y el contenedor de la navegación
+  const menuBtn = document.querySelector('.menu');
+  const navContainer = document.querySelector('.nav nav');
+
+  // Al hacer clic en el botón, alterna la visibilidad del menú
+  menuBtn.addEventListener('click', () => {
+    if (navContainer.style.display === 'flex') {
+      navContainer.style.display = 'none';
+    } else {
+      // Configuramos estilos rápidos para que se despliegue de forma vertical e impecable en móviles
+      navContainer.style.display = 'flex';
+      navContainer.style.flexDirection = 'column';
+      navContainer.style.position = 'absolute';
+      navContainer.style.top = '76px';
+      navContainer.style.left = '0';
+      navContainer.style.width = '100%';
+      navContainer.style.background = 'rgba(255, 255, 255, 0.98)';
+      navContainer.style.padding = '24px';
+      navContainer.style.gap = '20px';
+      navContainer.style.borderBottom = '1px solid #e2e8f0';
+      navContainer.style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.05)';
+    }
+  });
+
+  // Oculta el menú automáticamente si el usuario agranda la pantalla
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 850) {
+      navContainer.removeAttribute('style');
+    }
+  });
+</script>
