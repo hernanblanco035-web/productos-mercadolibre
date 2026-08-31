@@ -319,36 +319,8 @@
       {name:"Afeitadora Eléctrica Hombre Shaver VGR V-325 Recargable",cat:"Belleza",price:"$45.590",icon:"🪒",desc:"Afeitadora VGR V-325 inalámbrica y recargable.",url:"https://meli.la/1yiuPkC"}
     ];
 
-    const imageCache = {};
-
     function getFallbackImage(product) {
         return `https://placehold.co/600x600?text=${encodeURIComponent(product.icon)}`;
-    }
-
-    async function getImageUrl(product) {
-        if (product.image) return product.image;
-        if (imageCache[product.url]) return imageCache[product.url];
-
-        try {
-            const response = await fetch(
-                `https://api.mercadolibre.com/sites/MLA/search?q=${encodeURIComponent(product.name)}&limit=1`
-            );
-
-            if (!response.ok) throw new Error("No se pudo consultar Mercado Libre");
-
-            const data = await response.json();
-            const result = data.results && data.results[0];
-            const image = result && (result.thumbnail || result.secure_thumbnail);
-
-            if (image) {
-                imageCache[product.url] = image.replace(/^http:/, "https:");
-                return imageCache[product.url];
-            }
-        } catch (error) {
-            console.warn("No se pudo obtener la imagen de:", product.name, error);
-        }
-
-        return getFallbackImage(product);
     }
 
     function createProductCard(product, image = getFallbackImage(product)) {
@@ -369,17 +341,11 @@
         `;
     }
 
-    async function renderProducts(list = products) {
+    function renderProducts(list = products) {
         const container = document.querySelector("#products");
         if (!container) return;
 
         container.innerHTML = list.map(product => createProductCard(product)).join("");
-
-        await Promise.all(list.map(async (product, index) => {
-            const image = await getImageUrl(product);
-            const cardImage = container.querySelectorAll(".product-img img")[index];
-            if (cardImage && image) cardImage.src = image;
-        }));
 
         const count = document.querySelector("#productCount");
         if (count) count.textContent = list.length + " productos";
@@ -574,4 +540,58 @@
          * ============================
          * MOSTRAR TODOS LOS PRODUCTOS
          * ============================
-   
+         */
+
+        if (
+            typeof products !== "undefined" &&
+            typeof renderProducts === "function"
+        ) {
+
+            renderProducts(products);
+
+
+            const productCount =
+                document.querySelector("#productCount");
+
+
+            if (productCount) {
+
+                productCount.textContent =
+                    products.length +
+                    " productos";
+
+            }
+
+        } else {
+
+            console.error(
+                "No se encontró products.js o la variable products."
+            );
+
+
+            const container =
+                document.querySelector("#products");
+
+
+            if (container) {
+
+                container.innerHTML = `
+                    <p style="
+                        grid-column:1/-1;
+                        text-align:center;
+                        padding:40px;
+                    ">
+                        No se pudieron cargar los productos.
+                    </p>
+                `;
+
+            }
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
