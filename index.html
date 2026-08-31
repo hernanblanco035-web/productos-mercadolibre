@@ -1,157 +1,526 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CompraSmart - Ofertas y Productos Recomendados</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CompraSmart - Ofertas y Productos Recomendados</title>
 
-    <!-- NAV BAR ESTILO MERCADO LIBRE -->
-    <header class="header">
-        <div class="container header-top">
-            <a class="logo" href="#">Comprasmart</a>
-            
-            <form class="search">
-                <input type="text" placeholder="Buscar productos, marcas y más..." aria-label="Buscar">
-                <button type="submit" class="search-btn">🔍</button>
-            </form>
+<link rel="stylesheet" href="styles.css">
 
-            <button class="menu" aria-label="Abrir menú">☰</button>
-        </div>
-        
-        <div class="container header-bottom">
-            <nav class="nav-links">
-                <a href="#ofertas" class="active">Ofertas</a>
-                <a href="#categorias">Categorías</a>
-                <a href="#comparativas">Comparativas</a>
-            </nav>
-        </div>
-    </header>
+</head><body><!-- ============================= -->
+<!-- NAVBAR -->
+<!-- ============================= -->
 
-    <main>
-        <!-- SECCIÓN HERO / CATEGORÍAS RÁPIDAS -->
-        <section class="hero">
-            <div class="container">
-                <div class="quick-tags">
-                    <span>Buscar:</span>
-                    <button>Audio</button>
-                    <button>Celulares</button>
-                    <button>Hogar</button>
-                    <button>Informática</button>
-                </div>
+<header class="header">
+
+    <div class="container header-top">
+
+        <a class="logo" href="#">
+            CompraSmart
+        </a>
+
+        <form class="search" id="searchForm">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar productos, marcas y más..."
+                aria-label="Buscar"
+            >
+
+            <button
+                type="submit"
+                class="search-btn"
+                aria-label="Buscar"
+            >
+                🔍
+            </button>
+
+        </form>
+
+        <button
+            class="menu"
+            aria-label="Abrir menú"
+            type="button"
+        >
+            ☰
+        </button>
+
+    </div>
+
+
+    <div class="container header-bottom">
+
+        <nav class="nav-links">
+
+            <a href="#ofertas" class="active">
+                Ofertas
+            </a>
+
+            <a href="#categorias">
+                Categorías
+            </a>
+
+            <a href="#comparativas">
+                Comparativas
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ============================= -->
+<!-- CONTENIDO PRINCIPAL -->
+<!-- ============================= -->
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="quick-tags">
+
+                <span>Buscar:</span>
+
+                <button type="button" data-category="Audio">
+                    Audio
+                </button>
+
+                <button type="button" data-category="Celulares">
+                    Celulares
+                </button>
+
+                <button type="button" data-category="Hogar">
+                    Hogar
+                </button>
+
+                <button type="button" data-category="Informática">
+                    Informática
+                </button>
+
+                <button type="button" data-category="Herramientas">
+                    Herramientas
+                </button>
+
+                <button type="button" data-category="Belleza">
+                    Belleza
+                </button>
+
             </div>
-        </section>
 
-        <!-- GRILLA DE PRODUCTOS REALES -->
-        <section class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2>Basado en tu última visita</h2>
-                    <span class="count">Ver historial</span>
-                </div>
+        </div>
 
-                <div class="product-grid">
-                    
-                    <!-- Producto 1: Xiaomi Buds -->
-                    <article class="product">
-                        <div class="product-img">🎧</div>
-                        <div class="product-body">
-                            <span class="tag-promo">AUDIO</span>
-                            <h3>Xiaomi Redmi Buds 6 Play Bluetooth</h3>
-                            <p class="product-desc">Auriculares inalámbricos Xiaomi Redmi Buds 6 Play con conexión Bluetooth.</p>
-                            <div class="price-container">
-                                <span class="price">$ 33.000</span>
-                            </div>
-                            <span class="envio-gratis">Envío gratis</span>
-                            <a href="https://meli.la/18KeDbr" target="_blank" class="cta-link">Ver en Mercado Libre</a>
-                        </div>
-                    </article>
+    </section>
 
-                    <!-- Producto 2: Pava -->
-                    <article class="product">
-                        <div class="product-img">☕</div>
-                        <div class="product-body">
-                            <span class="tag-promo">HOGAR</span>
-                            <h3>Pava Eléctrica / Tradicional</h3>
-                            <p class="product-desc">Pava para preparar tus bebidas calientes de forma práctica.</p>
-                            <div class="price-container">
-                                <span class="price">$ 15.489</span>
-                            </div>
-                            <a href="https://meli.la/2asWhC1" target="_blank" class="cta-link">Ver en Mercado Libre</a>
-                        </div>
-                    </article>
 
-                    <!-- Producto 3: Notebook Exo -->
-                    <article class="product">
-                        <div class="product-img">💻</div>
-                        <div class="product-body">
-                            <span class="tag-promo">INFORMÁTICA</span>
-                            <h3>Notebook Exo Smart T38 Intel N4020 4GB SSD 128GB Windows 11</h3>
-                            <p class="product-desc">Notebook Exo Smart T38 con procesador Intel N4020, 4GB de RAM y SSD de 128GB.</p>
-                            <div class="price-container">
-                                <span class="price">$ 309.999</span>
-                            </div>
-                            <span class="envio-gratis">Envío gratis</span>
-                            <a href="https://meli.la/118PRim" target="_blank" class="cta-link">Ver en Mercado Libre</a>
-                        </div>
-                    </article>
+    <!-- ============================= -->
+    <!-- PRODUCTOS -->
+    <!-- ============================= -->
 
-                    <!-- Producto 4: Combo Taladro -->
-                    <article class="product">
-                        <div class="product-img">🔧</div>
-                        <div class="product-body">
-                            <span class="tag-promo">HERRAMIENTAS</span>
-                            <h3>Combo Taladro 750W y Amoladora Angular 115mm 720W Konan Bric</h3>
-                            <p class="product-desc">Combo de herramientas Konan Bric con taladro de 750W y amoladora angular de 115mm.</p>
-                            <div class="price-container">
-                                <span class="price">$ 88.019</span>
-                            </div>
-                            <span class="envio-gratis">Envío gratis</span>
-                            <a href="https://meli.la/1bSKkmY" target="_blank" class="cta-link">Ver en Mercado Libre</a>
-                        </div>
-                    </article>
+    <section
+        class="section"
+        id="ofertas"
+    >
 
-                    <!-- Producto 5: Crema L'Oréal -->
-                    <article class="product">
-                        <div class="product-img">✨</div>
-                        <div class="product-body">
-                            <span class="tag-promo">BELLEZA</span>
-                            <h3>Crema Líquida Glass Skin Revitalift 50 g L'Oréal Paris</h3>
-                            <p class="product-desc">Crema líquida Glass Skin Revitalift de L'Oréal Paris de 50 g.</p>
-                            <div class="price-container">
-                                <span class="price-consultar">Consultar precio</span>
-                            </div>
-                        </div>
-                    </article>
+        <div class="container">
 
-                    <!-- Producto 6: Samsung A16 -->
-                    <article class="product">
-                        <div class="product-img">📱</div>
-                        <div class="product-body">
-                            <span class="tag-promo">CELULARES</span>
-                            <h3>Samsung Galaxy A16 128GB</h3>
-                            <p class="product-desc">Samsung Galaxy A16 con 128GB de almacenamiento interno.</p>
-                            <div class="price-container">
-                                <span class="price-consultar">Consultar precio</span>
-                            </div>
-                        </div>
-                    </article>
+            <div class="section-head">
 
-                </div>
+                <h2>
+                    Productos recomendados
+                </h2>
+
+                <span
+                    class="count"
+                    id="productCount"
+                >
+                    Cargando productos...
+                </span>
+
             </div>
-        </section>
-    </main>
 
-    <!-- MENÚ INTERACTIVO MÓVIL -->
-    <script>
-      const menuBtn = document.querySelector('.menu');
-      const navLinks = document.querySelector('.header-bottom');
 
-      menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-      });
-    </script>
+            <!--
+                IMPORTANTE:
+                JavaScript coloca TODOS los productos aquí.
+            -->
+
+            <div
+                class="product-grid"
+                id="products"
+            ></div>
+
+
+            <!-- MENSAJE SI NO HAY RESULTADOS -->
+
+            <div
+                id="noResults"
+                style="display:none; text-align:center; padding:40px 20px;"
+            >
+
+                <h3>
+                    No encontramos productos
+                </h3>
+
+                <p>
+                    Probá con otro nombre o categoría.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- CATEGORÍAS -->
+    <!-- ============================= -->
+
+    <section
+        class="section"
+        id="categorias"
+    >
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <h2>
+                    Categorías
+                </h2>
+
+            </div>
+
+            <div class="quick-tags">
+
+                <button type="button" data-category="Audio">
+                    🎧 Audio
+                </button>
+
+                <button type="button" data-category="Celulares">
+                    📱 Celulares
+                </button>
+
+                <button type="button" data-category="Gaming">
+                    🎮 Gaming
+                </button>
+
+                <button type="button" data-category="Hogar">
+                    🏠 Hogar
+                </button>
+
+                <button type="button" data-category="Informática">
+                    💻 Informática
+                </button>
+
+                <button type="button" data-category="Herramientas">
+                    🔧 Herramientas
+                </button>
+
+                <button type="button" data-category="Belleza">
+                    🧴 Belleza
+                </button>
+
+                <button type="button" data-category="Seguridad">
+                    📷 Seguridad
+                </button>
+
+                <button type="button" data-category="Tecnología">
+                    🛰️ Tecnología
+                </button>
+
+                <button type="button" data-category="Juguetes">
+                    🧸 Juguetes
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- COMPARATIVAS -->
+    <!-- ============================= -->
+
+    <section
+        class="section"
+        id="comparativas"
+    >
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <h2>
+                    Comparativas
+                </h2>
+
+            </div>
+
+            <p>
+                Próximamente vas a poder comparar productos
+                y encontrar la mejor opción.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
+<!--
+    Este archivo debe contener la lista
+    completa de los 34 productos.
+-->
+
+<script src="products.js"></script>
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        /*
+         * ============================
+         * MENÚ MÓVIL
+         * ============================
+         */
+
+        const menuBtn =
+            document.querySelector(".menu");
+
+        const navLinks =
+            document.querySelector(".header-bottom");
+
+
+        if (menuBtn && navLinks) {
+
+            menuBtn.addEventListener("click", () => {
+
+                navLinks.classList.toggle("open");
+
+            });
+
+        }
+
+
+        /*
+         * ============================
+         * BUSCADOR
+         * ============================
+         */
+
+        const searchForm =
+            document.querySelector("#searchForm");
+
+        const searchInput =
+            document.querySelector("#searchInput");
+
+
+        if (searchForm && searchInput) {
+
+            searchForm.addEventListener(
+                "submit",
+                (event) => {
+
+                    event.preventDefault();
+
+                    const text =
+                        searchInput.value
+                        .trim()
+                        .toLowerCase();
+
+
+                    if (!text) {
+
+                        renderProducts(products);
+
+                        return;
+
+                    }
+
+
+                    const filtered =
+                        products.filter(product => {
+
+                            return (
+
+                                product.name
+                                    .toLowerCase()
+                                    .includes(text)
+
+                                ||
+
+                                product.desc
+                                    .toLowerCase()
+                                    .includes(text)
+
+                                ||
+
+                                product.cat
+                                    .toLowerCase()
+                                    .includes(text)
+
+                            );
+
+                        });
+
+
+                    renderProducts(filtered);
+
+
+                    const noResults =
+                        document.querySelector("#noResults");
+
+
+                    if (noResults) {
+
+                        noResults.style.display =
+                            filtered.length === 0
+                                ? "block"
+                                : "none";
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /*
+         * ============================
+         * CATEGORÍAS
+         * ============================
+         */
+
+        const categoryButtons =
+            document.querySelectorAll(
+                "[data-category]"
+            );
+
+
+        categoryButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const category =
+                        button.dataset.category;
+
+
+                    const filtered =
+                        products.filter(product => {
+
+                            return product.cat === category;
+
+                        });
+
+
+                    renderProducts(filtered);
+
+
+                    const noResults =
+                        document.querySelector("#noResults");
+
+
+                    if (noResults) {
+
+                        noResults.style.display =
+                            filtered.length === 0
+                                ? "block"
+                                : "none";
+
+                    }
+
+
+                    const productsSection =
+                        document.querySelector("#ofertas");
+
+
+                    if (productsSection) {
+
+                        productsSection.scrollIntoView({
+                            behavior: "smooth"
+                        });
+
+                    }
+
+                }
+            );
+
+        });
+
+
+        /*
+         * ============================
+         * MOSTRAR TODOS LOS PRODUCTOS
+         * ============================
+         */
+
+        if (
+            typeof products !== "undefined" &&
+            typeof renderProducts === "function"
+        ) {
+
+            renderProducts(products);
+
+
+            const productCount =
+                document.querySelector("#productCount");
+
+
+            if (productCount) {
+
+                productCount.textContent =
+                    products.length +
+                    " productos";
+
+            }
+
+        } else {
+
+            console.error(
+                "No se encontró products.js o la variable products."
+            );
+
+
+            const container =
+                document.querySelector("#products");
+
+
+            if (container) {
+
+                container.innerHTML = `
+                    <p style="
+                        grid-column:1/-1;
+                        text-align:center;
+                        padding:40px;
+                    ">
+                        No se pudieron cargar los productos.
+                    </p>
+                `;
+
+            }
+
+        }
+
+    });
+
+</script>
+
 </body>
-</html>
+    </html>
