@@ -1,7 +1,7 @@
 const products=[
  {name:"Auriculares Xiaomi Redmi Buds 6 Play Bluetooth",cat:"Audio",price:"$33.000",rating:"4,7",icon:"🎧",desc:"Auriculares Bluetooth Xiaomi compactos y prácticos para disfrutar música y llamadas.",url:"https://meli.la/18KeDbr"},
  {name:"Celular Samsung Galaxy A16 128GB",cat:"Tecnología",price:"$304.000",rating:"4,6",icon:"📱",desc:"Celular Samsung Galaxy A16 de 128GB para uso diario, redes y multimedia.",url:"https://meli.la/1g28Y8c"},
- {name:"Mouse Gaming RGB",cat:"Gaming",price:"$24.999",rating:"4,8",icon:"🖱️",desc:"Sensor preciso y diseño pensado para sesiones largas.",url:"TU_ENLACE_DE_AFILIADO_3"},
+ {name:"Mouse Gamer X11 Attack Shark Tri Mode 22000 DPI PAW3311 Dock - Negro",cat:"Gaming",price:"$48.299",rating:"4,8",icon:"🖱️",desc:"Mouse gamer X11 Attack Shark con conexión Tri Mode, sensor PAW3311 y hasta 22000 DPI.",url:"https://meli.la/2VCrUV8"},
  {name:"Teclado mecánico compacto",cat:"Gaming",price:"$49.999",rating:"4,7",icon:"⌨️",desc:"Formato compacto, switches mecánicos y retroiluminación.",url:"TU_ENLACE_DE_AFILIADO_4"},
  {name:"Parlante Bluetooth portátil",cat:"Audio",price:"$32.999",rating:"4,5",icon:"🔊",desc:"Portátil y práctico para escuchar música en cualquier lugar.",url:"TU_ENLACE_DE_AFILIADO_5"},
  {name:"Cargador rápido USB-C",cat:"Tecnología",price:"$17.999",rating:"4,8",icon:"🔌",desc:"Cargador compacto para dispositivos compatibles.",url:"TU_ENLACE_DE_AFILIADO_6"},
