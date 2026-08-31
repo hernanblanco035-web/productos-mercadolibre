@@ -1,33 +1,528 @@
-/* --- AJUSTES PARA MÓVILES (Reemplaza tus @media del final por esto) --- */
-
-@media(max-width:850px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-card{display:none}
-  .product-grid{grid-template-columns:repeat(2,1fr)}
-  .categories{grid-template-columns:repeat(2,1fr)}
-  .guides{grid-template-columns:1fr}
-  .nav nav{display:none}
-  .menu{display:block}
+* {
+  box-sizing: border-box;
 }
 
-@media(max-width:520px){
-  .hero{padding:40px 0}
-  .hero h1{font-size:clamp(32px, 10vw, 42px);letter-spacing:-1.5px}
-  
-  /* Corrige que los productos no queden demasiado apretados */
-  .product-grid{grid-template-columns:1fr; gap:16px} 
-  .product-img{height:160px;font-size:54px}
-  .product-body{padding:16px}
-  .product h3{font-size:16px}
-  .price{font-size:20px}
-  
-  /* Ajusta categorías y pie de página en una sola columna */
-  .categories{grid-template-columns:1fr; gap:12px}
-  .footer-grid{grid-template-columns:1fr; gap:40px; text-align:center}
-  .footer-grid div:nth-child(2) {align-items: center}
-  
-  /* Evita que el buscador se desborde horizontalmente */
-  .search{flex-direction:column; padding:8px; gap:8px; border-radius:16px}
-  .search input{padding:10px}
-  .search button{padding:12px; border-radius:10px}
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #f8fafc; /* Un fondo gris claro muy sutil para que contrasten las tarjetas blancas */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+/* --- HEADER MODERNO CON EFECTO CRISTAL --- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px); /* Efecto difuminado de iOS */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+}
+
+.nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #6366f1, #d946ef); /* Degradado moderno */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav nav {
+  display: flex;
+  gap: 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.nav nav a:hover {
+  color: #6366f1;
+}
+
+.menu {
+  display: none;
+  background: #f1f5f9;
+  border: 0;
+  font-size: 22px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* --- HERO VIBRANTE --- */
+.hero {
+  background: radial-gradient(circle at top right, rgba(217, 70, 239, 0.08), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.08), transparent 40%),
+              #fff;
+  padding: 90px 0 80px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #6366f1;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 0 0 24px;
+  color: #0f172a;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, #6366f1, #d946ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 600px;
+}
+
+/* --- BUSCADOR ESTILO PREMIUM --- */
+.search {
+  display: flex;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 8px;
+  margin-top: 36px;
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.12);
+  max-width: 620px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  min-width: 0;
+  color: #0f172a;
+}
+
+.search button {
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #d946ef);
+  color: white;
+  font-weight: 700;
+  padding: 0 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.search button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.quick {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.quick button {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 99px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.quick button:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+  background: #f5f3ff;
+}
+
+/* --- TARJETA HERO LATERAL --- */
+.hero-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 5px;
+  background: linear-gradient(90deg, #6366f1, #d946ef);
+}
+
+.hero-icon {
+  font-size: 48px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.hero-card h3 {
+  font-size: 24px;
+  margin: 12px 0 8px;
+  color: #0f172a;
+}
+
+.hero-card p {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- SECCIONES Y CONTENEDORES --- */
+.section {
+  padding: 80px 0;
+}
+
+.section.light {
+  background: #f1f5f9;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.section h2 {
+  font-size: 36px;
+  letter-spacing: -1.5px;
+  margin: 0;
+  color: #0f172a;
+}
+
+.count {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* --- PRODUCTOS (TARJETAS TARJETAS GLOW) --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product {
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1);
+}
+
+.product-img {
+  height: 200px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #f8fafc, #eef2f6);
+  font-size: 68px;
+}
+
+.product-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #d946ef;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin: 10px 0 6px;
+  line-height: 1.4;
+  color: #0f172a;
+}
+
+.stars {
+  font-size: 14px;
+  color: #f59e0b;
+  margin-bottom: 8px;
+}
+
+.product p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 800;
+  margin: auto 0 16px;
+  color: #0f172a;
+}
+
+.cta {
+  background: #0f172a;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.product:hover .cta {
+  background: linear-gradient(135deg, #6366f1, #d946ef);
+}
+
+/* --- CATEGORÍAS --- */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.categories button {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 34px;
+  transition: all 0.2s;
+}
+
+.categories button:hover {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(217, 70, 239, 0.02));
+  transform: scale(1.02);
+}
+
+.categories b, .categories small {
+  display: block;
+}
+
+.categories b {
+  font-size: 18px;
+  margin-top: 14px;
+  color: #0f172a;
+}
+
+.categories small {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* --- GUÍAS --- */
+.guides {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.guides article {
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px;
+  background: #fff;
+}
+
+.guides article > span {
+  font-size: 36px;
+}
+
+.guides h3 {
+  margin: 16px 0 8px;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.guides p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.guides a {
+  color: #6366f1;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.guides a:hover {
+  color: #d946ef;
+}
+
+/* --- ADVERTENCIAS Y COMPLIANCE --- */
+.disclosure {
+  background: #fffbeb;
+  border-top: 1px solid #fef3c7;
+  border-bottom: 1px solid #fef3c7;
+  padding: 24px 0;
+}
+
+.disclosure p {
+  margin: 0;
+  color: #b45309;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 60px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 1fr;
+  gap: 40px;
+}
+
+.footer-grid .logo {
+  font-size: 28px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.footer-grid p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-grid > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.footer-grid > div:nth-child(2) a:hover {
+  color: #fff;
+}
+
+.muted {
+  font-size: 12px !important;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   --- DISEÑO RESPONSIVO EXCLUSIVO PARA TELÉFONOS ---
+   ========================================================================== */
+
+@media (max-width: 850px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-card { display: none; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .categories { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .guides { grid-template-columns: 1fr; gap: 16px; }
+  .nav nav { display: none; }
+  .menu { display: block; }
+}
+
+@media (max-width: 520px) {
+  .hero { padding: 50px 0; }
+  .hero h1 { font-size: clamp(34px, 11vw, 44px); letter-spacing: -1.5px; }
+  
+  /* Los productos en una sola columna lucen mucho más limpios en móvil */
+  .product-grid { grid-template-columns: 1fr; gap: 20px; }
+  .product-img { height: 180px; }
+  
+  /* Ajustes de categorías y footer apilados perfectamente */
+  .categories { grid-template-columns: 1fr; gap: 12px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+  .footer-grid div:nth-child(2) { align-items: center; }
+  
+  .section { padding: 56px 0; }
+  .section h2 { font-size: 28px; letter-spacing: -1px; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 24px; }
+  
+  /* Buscador apilado verticalmente en móviles para que no se desborde */
+  .search { flex-direction: column; padding: 6px; gap: 6px; border-radius: 16px; }
+  .search input { padding: 12px; font-size: 15px; }
+  .search button { padding: 14px; border-radius: 12px; width: 100%; }
+  }
+  
