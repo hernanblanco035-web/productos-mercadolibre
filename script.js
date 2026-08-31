@@ -1,5 +1,5 @@
 const products=[
- {name:"Auriculares Bluetooth Pro",cat:"Audio",price:"$39.999",rating:"4,7",icon:"🎧",desc:"Buena batería, conexión inalámbrica y micrófono integrado.",url:"TU_ENLACE_DE_AFILIADO_1"},
+ {name:"Auriculares Bluetooth Pro",cat:"Audio",price:"$39.999",rating:"4,7",icon:"🎧",desc:"Buena batería, conexión inalámbrica y micrófono integrado.",url:"https://meli.la/2mSqZCR"},
  {name:"Smartphone gama económica",cat:"Tecnología",price:"$189.999",rating:"4,6",icon:"📱",desc:"Una opción equilibrada para uso diario, redes y multimedia.",url:"TU_ENLACE_DE_AFILIADO_2"},
  {name:"Mouse Gaming RGB",cat:"Gaming",price:"$24.999",rating:"4,8",icon:"🖱️",desc:"Sensor preciso y diseño pensado para sesiones largas.",url:"TU_ENLACE_DE_AFILIADO_3"},
  {name:"Teclado mecánico compacto",cat:"Gaming",price:"$49.999",rating:"4,7",icon:"⌨️",desc:"Formato compacto, switches mecánicos y retroiluminación.",url:"TU_ENLACE_DE_AFILIADO_4"},
