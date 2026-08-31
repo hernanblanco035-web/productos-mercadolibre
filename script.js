@@ -36,7 +36,7 @@ const products = [
     cat: "Herramientas",
     price: "$44.619",
     icon: "🔧",
-    desc: "Taladro percutor eléctrico Pektra de 750W, mandril de 13mm y hasta 3000 RPM.",
+    desc: "Taladro percutor eléctrico Pektra de 750W.",
     url: "https://meli.la/2eCmVA8"
   },
   {
@@ -44,15 +44,15 @@ const products = [
     cat: "Celulares",
     price: "$214.999",
     icon: "📱",
-    desc: "Motorola Moto G06 con 64GB de almacenamiento, NFC y diseño Tapestry.",
+    desc: "Motorola Moto G06 con 64GB de almacenamiento y NFC.",
     url: "https://meli.la/2bDKX34"
   },
   {
     name: "Tensiómetro Digital de Brazo Bluetooth Femmto",
-    cat: "Hogar",
+    cat: "Salud",
     price: "$32.999",
     icon: "🩺",
-    desc: "Tensiómetro digital automático de brazo con Bluetooth, batería recargable USB.",
+    desc: "Tensiómetro digital automático de brazo con Bluetooth y batería recargable USB.",
     url: "https://meli.la/1zzoW3Z"
   },
   {
@@ -60,15 +60,15 @@ const products = [
     cat: "Belleza",
     price: "$65.000",
     icon: "🧴",
-    desc: "Sérum facial Mela B3 de La Roche-Posay con niacinamida para el cuidado de la piel.",
+    desc: "Sérum facial Mela B3 con niacinamida.",
     url: "https://meli.la/2vhtP86"
   },
   {
-    name: "Kit 3 Cámaras de Seguridad Geotek 3MP IP WiFi Exterior Full HD",
+    name: "Kit 3 Cámaras de Seguridad Geotek 3MP IP WiFi Exterior",
     cat: "Seguridad",
     price: "$120.806",
     icon: "📷",
-    desc: "Kit de 3 cámaras Geotek 3MP WiFi para exterior con visión nocturna y detección de movimiento.",
+    desc: "Kit de 3 cámaras Geotek 3MP WiFi para exterior.",
     url: "https://meli.la/153SzVN"
   },
   {
@@ -76,23 +76,23 @@ const products = [
     cat: "Herramientas",
     price: "$98.660",
     icon: "🧼",
-    desc: "Hidrolavadora eléctrica Trent de 1400W y 1600 PSI con accesorios.",
+    desc: "Hidrolavadora eléctrica Trent de 1400W con accesorios.",
     url: "https://meli.la/2aSLhoE"
   },
   {
-    name: "Pava Eléctrica Hervidora Acero Inoxidable 1.8 Lts Codini P18HAN",
+    name: "Pava Eléctrica Codini P18HAN 1.8 Litros",
     cat: "Hogar",
     price: "$15.489",
     icon: "🫖",
-    desc: "Pava eléctrica Codini de acero inoxidable con capacidad de 1,8 litros.",
+    desc: "Pava eléctrica Codini de acero inoxidable de 1,8 litros.",
     url: "https://meli.la/2asWhC1"
   },
   {
-    name: "Notebook Exo Smart T38 Intel N4020 4GB SSD 128GB Windows 11 Gris",
+    name: "Notebook Exo Smart T38 Intel N4020 4GB SSD 128GB Windows 11",
     cat: "Informática",
     price: "$309.999",
     icon: "💻",
-    desc: "Notebook Exo Smart T38 con Intel Celeron N4020, 4GB de RAM, SSD 128GB y Windows 11.",
+    desc: "Notebook Exo Smart T38 con Intel N4020, 4GB RAM y SSD de 128GB.",
     url: "https://meli.la/118PRim"
   },
   {
@@ -100,7 +100,7 @@ const products = [
     cat: "Herramientas",
     price: "$88.019",
     icon: "🔧",
-    desc: "Combo de herramientas Konan Bric con taladro de 750W y amoladora angular de 720W.",
+    desc: "Combo Konan Bric con taladro y amoladora angular.",
     url: "https://meli.la/1bSKkmY"
   },
   {
@@ -108,7 +108,7 @@ const products = [
     cat: "Belleza",
     price: "$32.893",
     icon: "🧴",
-    desc: "Crema líquida Glass Skin Revitalift de L'Oréal Paris de 50 gramos.",
+    desc: "Crema líquida Glass Skin Revitalift de L'Oréal Paris.",
     url: "https://meli.la/1AukJJM"
   },
   {
@@ -116,7 +116,7 @@ const products = [
     cat: "Belleza",
     price: "$24.990",
     icon: "🧴",
-    desc: "Gel limpiador Garnier de 250ml para limpieza y cuidado de la piel.",
+    desc: "Gel limpiador Garnier de 250ml.",
     url: "https://meli.la/18cWNc2"
   },
   {
@@ -124,7 +124,7 @@ const products = [
     cat: "Hogar",
     price: "$22.799",
     icon: "💆",
-    desc: "Pistola masajeadora Gadnic con 6 velocidades, 2500 RPM, batería de 1800 mAh y 4 cabezales.",
+    desc: "Pistola masajeadora Gadnic con 6 velocidades y 4 cabezales.",
     url: "https://meli.la/2URwMwJ"
   },
   {
@@ -132,7 +132,7 @@ const products = [
     cat: "Belleza",
     price: "$19.990",
     icon: "💇",
-    desc: "Planchita profesional Allure modelo PL1010AP color azul.",
+    desc: "Planchita profesional Allure PL1010AP color azul.",
     url: "https://meli.la/1GUReH6"
   },
   {
@@ -140,7 +140,7 @@ const products = [
     cat: "Informática",
     price: "$549.999",
     icon: "💻",
-    desc: "Notebook Philco de 14,1 pulgadas con Intel Celeron, 4GB de RAM, SSD 128GB y Windows 11.",
+    desc: "Notebook Philco de 14,1 pulgadas con 4GB RAM y SSD de 128GB.",
     url: "https://meli.la/2jbyJ4C"
   },
   {
@@ -148,7 +148,7 @@ const products = [
     cat: "Celulares",
     price: "$214.699",
     icon: "📱",
-    desc: "Samsung Galaxy A07 con 64GB de almacenamiento, 4GB de RAM y color negro.",
+    desc: "Samsung Galaxy A07 con 64GB y 4GB de RAM.",
     url: "https://meli.la/13pnr6u"
   },
   {
@@ -156,7 +156,7 @@ const products = [
     cat: "Audio",
     price: "$83.807",
     icon: "🎧",
-    desc: "Audífonos Redragon Ire Pro H848 con Bluetooth, USB, batería recargable y diseño negro.",
+    desc: "Audífonos Redragon H848 Bluetooth recargables.",
     url: "https://meli.la/2gCvVqF"
   },
   {
@@ -164,7 +164,7 @@ const products = [
     cat: "Celulares",
     price: "$539.999",
     icon: "📱",
-    desc: "Motorola Edge 60 Fusion Dual SIM con 8GB de RAM y 256GB de almacenamiento.",
+    desc: "Motorola Edge 60 Fusion Dual SIM con 8GB RAM y 256GB.",
     url: "https://meli.la/1MGRG7p"
   },
   {
@@ -172,7 +172,7 @@ const products = [
     cat: "Celulares",
     price: "$567.999",
     icon: "📱",
-    desc: "Motorola Moto G77 en color Shaded Spruce.",
+    desc: "Motorola Moto G77 color Shaded Spruce.",
     url: "https://meli.la/2KAWqcC"
   },
   {
@@ -180,7 +180,7 @@ const products = [
     cat: "Celulares",
     price: "$339.999",
     icon: "📱",
-    desc: "Motorola Moto G15 con 128GB de almacenamiento, 8GB de RAM y Dual SIM.",
+    desc: "Motorola Moto G15 con 128GB, 8GB RAM y Dual SIM.",
     url: "https://meli.la/2hVZUuH"
   },
   {
@@ -188,7 +188,7 @@ const products = [
     cat: "Seguridad",
     price: "$73.000",
     icon: "📷",
-    desc: "Cámara Imou Cruiser SE+ 3MP WiFi para exterior con color, sirena y audio.",
+    desc: "Cámara Imou Cruiser SE+ 3MP para exterior.",
     url: "https://meli.la/2jZPrWT"
   },
   {
@@ -196,7 +196,7 @@ const products = [
     cat: "Hogar",
     price: "$49.600",
     icon: "💧",
-    desc: "Bomba presurizadora Vasser Motorarg PRE1 de 120W para instalaciones de agua.",
+    desc: "Bomba presurizadora Vasser Motorarg PRE1 de 120W.",
     url: "https://meli.la/27SUDRk"
   },
   {
@@ -204,15 +204,15 @@ const products = [
     cat: "Tecnología",
     price: "$499.999",
     icon: "🛰️",
-    desc: "Kit Starlink Estándar V4 para conexión a Internet mediante satélite.",
+    desc: "Kit Starlink Estándar V4 para Internet vía satélite.",
     url: "https://meli.la/2HEw8cV"
   },
   {
-    name: "Grand Theft Auto VI GTA VI Caja Física con Código de Descarga PS5",
+    name: "Grand Theft Auto VI GTA VI PS5",
     cat: "Gaming",
     price: "$219.999",
     icon: "🎮",
-    desc: "Grand Theft Auto VI para PlayStation 5 en caja física con código de descarga.",
+    desc: "Grand Theft Auto VI para PlayStation 5.",
     url: "https://meli.la/1Tefxri"
   },
   {
@@ -220,7 +220,7 @@ const products = [
     cat: "Celulares",
     price: "$569.999",
     icon: "📱",
-    desc: "Xiaomi Note 15 Pro con 8GB de RAM, 256GB de almacenamiento, 4G LTE y cámara de 200MP.",
+    desc: "Xiaomi Note 15 Pro con 8GB RAM, 256GB y cámara de 200MP.",
     url: "https://meli.la/14jZNhF"
   },
   {
@@ -228,7 +228,7 @@ const products = [
     cat: "Hogar",
     price: "$269.999",
     icon: "🪑",
-    desc: "Set de 2 sillas para oficina, escritorio, salas de espera o reuniones.",
+    desc: "Set de 2 sillas ergonómicas para oficina.",
     url: "https://meli.la/12vHPWr"
   },
   {
@@ -236,15 +236,15 @@ const products = [
     cat: "Juguetes",
     price: "$47.347",
     icon: "🐴",
-    desc: "Caballo saltarín inflable de goma para diversión y entretenimiento.",
+    desc: "Caballo saltarín inflable de goma.",
     url: "https://meli.la/2PShxeB"
   },
   {
-    name: "Purificador de Agua Sobre Mesada Filtro para Canilla Reduce Cloro",
+    name: "Purificador de Agua Sobre Mesada con Filtro para Canilla",
     cat: "Hogar",
     price: "$59.990",
     icon: "💧",
-    desc: "Purificador de agua para colocar sobre la mesada con filtro para canilla y reducción de cloro.",
+    desc: "Purificador de agua sobre mesada que reduce cloro.",
     url: "https://meli.la/2uz9sW2"
   },
   {
@@ -252,7 +252,7 @@ const products = [
     cat: "Hogar",
     price: "$7.893",
     icon: "💡",
-    desc: "Barra de luz LED recargable de 50cm con sensor de movimiento para alacena y cocina.",
+    desc: "Barra LED recargable de 50cm con sensor de movimiento.",
     url: "https://meli.la/1BHSsh3"
   },
   {
@@ -260,7 +260,7 @@ const products = [
     cat: "Hogar",
     price: "$414.427",
     icon: "🛏️",
-    desc: "Colchón en caja YOLO by Simmons de 2 plazas, medidas 190x140cm.",
+    desc: "Colchón YOLO by Simmons de 2 plazas.",
     url: "https://meli.la/2aDf1kN"
   },
   {
@@ -268,15 +268,133 @@ const products = [
     cat: "Belleza",
     price: "$34.557",
     icon: "☀️",
-    desc: "Protector solar facial L'Oréal Paris UV Defender FPS50+ en tono claro de 40ml.",
+    desc: "Protector solar facial UV Defender FPS50+.",
     url: "https://meli.la/2f8zHHP"
   },
   {
-    name: "Afeitadora Eléctrica Hombre Shaver VGR V-325 Recargable Negro y Azul",
+    name: "Afeitadora Eléctrica Hombre Shaver VGR V-325 Recargable",
     cat: "Belleza",
     price: "$45.590",
     icon: "🪒",
-    desc: "Afeitadora eléctrica VGR V-325 inalámbrica y recargable, color negro y azul.",
+    desc: "Afeitadora VGR V-325 inalámbrica y recargable.",
     url: "https://meli.la/1yiuPkC"
   }
 ];
+
+
+// =====================================================
+// IMÁGENES AUTOMÁTICAS
+// =====================================================
+
+function getImageUrl(product) {
+  // Si en algún momento agregamos una imagen manual,
+  // tendrá prioridad.
+  if (product.image) {
+    return product.image;
+  }
+
+  // Imagen genérica de respaldo.
+  // El sitio seguirá funcionando aunque Mercado Libre
+  // no permita recuperar automáticamente la publicación.
+  return `https://placehold.co/600x600?text=${encodeURIComponent(product.icon)}`;
+}
+
+
+// =====================================================
+// CREAR TARJETAS
+// =====================================================
+
+function createProductCard(product) {
+  const image = getImageUrl(product);
+
+  return `
+    <article class="product-card">
+
+      <div class="product-image">
+        <img
+          src="${image}"
+          alt="${product.name}"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='${getImageUrl({
+            icon: product.icon
+          })}'"
+        >
+
+        <span class="product-category">
+          ${product.cat}
+        </span>
+      </div>
+
+      <div class="product-info">
+
+        <h3>${product.name}</h3>
+
+        <p class="product-description">
+          ${product.desc}
+        </p>
+
+        <div class="product-bottom">
+
+          <strong class="product-price">
+            ${product.price}
+          </strong>
+
+          <a
+            class="product-button"
+            href="${product.url}"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            Ver en Mercado Libre
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+  `;
+}
+
+
+// =====================================================
+// MOSTRAR PRODUCTOS
+// =====================================================
+
+function renderProducts(list = products) {
+
+  const container =
+    document.querySelector("#products") ||
+    document.querySelector("#products-grid") ||
+    document.querySelector("#product-grid") ||
+    document.querySelector("#productGrid") ||
+    document.querySelector(".products-grid") ||
+    document.querySelector(".product-grid") ||
+    document.querySelector(".products") ||
+    document.querySelector("main");
+
+  if (!container) {
+    console.error(
+      "No se encontró el contenedor de productos."
+    );
+    return;
+  }
+
+  container.innerHTML = list
+    .map(createProductCard)
+    .join("");
+}
+
+
+// =====================================================
+// INICIO
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts(products);
+});
+
+// También permite que el HTML llame a renderProducts()
+// directamente si el sitio ya tenía esa función configurada.
+window.products = products;
+window.renderProducts = renderProducts;];
