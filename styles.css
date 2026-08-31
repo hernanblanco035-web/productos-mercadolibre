@@ -328,3 +328,33 @@ a {
     padding: 16px 0;
   }
 }
+.product-desc {
+  font-size: 12px;
+  color: #666;
+  margin: 6px 0 12px 0;
+  line-height: 1.4;
+}
+
+.cta-link {
+  display: block;
+  text-align: center;
+  background-color: #3483fa;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+
+.cta-link:hover {
+  background-color: #2b7cfb;
+}
+
+.price-consultar {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+  margin-top: 8px;
+}
