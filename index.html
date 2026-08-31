@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Productos recomendados, comparativas y ofertas de Mercado Libre.">
+  <title>CompraSmart — Productos recomendados</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#">Compra<span>Smart</span></a>
+      <nav>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#comparativas">Comparativas</a>
+      </nav>
+      <button class="menu" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">RECOMENDACIONES INTELIGENTES</p>
+          <h1>Encontrá productos que <span>valen la pena.</span></h1>
+          <p class="hero-text">Comparativas, ofertas y recomendaciones para comprar mejor en Mercado Libre.</p>
+          <div class="search">
+            <input id="searchInput" type="search" placeholder="¿Qué estás buscando? Ej: auriculares" aria-label="Buscar productos">
+            <button id="searchBtn">Buscar</button>
+          </div>
+          <div class="quick">
+            <span>Buscar:</span>
+            <button data-search="auriculares">Auriculares</button>
+            <button data-search="celular">Celulares</button>
+            <button data-search="gaming">Gaming</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-icon">🛍️</div>
+          <h3>Elegí mejor, gastá mejor</h3>
+          <p>Seleccionamos productos interesantes y te mostramos qué tener en cuenta antes de comprar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ofertas" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">SELECCIÓN DE HOY</p>
+            <h2>Productos recomendados</h2>
+          </div>
+          <span id="resultCount" class="count"></span>
+        </div>
+        <div id="products" class="product-grid"></div>
+        <p id="empty" class="empty" hidden>No encontramos productos con esa búsqueda.</p>
+      </div>
+    </section>
+
+    <section id="categorias" class="section light">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">EXPLORÁ</p>
+            <h2>Categorías</h2>
+          </div>
+        </div>
+        <div class="categories">
+          <button data-cat="Tecnología">📱 <b>Tecnología</b><small>Celulares y accesorios</small></button>
+          <button data-cat="Gaming">🎮 <b>Gaming</b><small>Periféricos y juegos</small></button>
+          <button data-cat="Hogar">🏠 <b>Hogar</b><small>Productos útiles</small></button>
+          <button data-cat="Audio">🎧 <b>Audio</b><small>Auriculares y parlantes</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparativas" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">GUÍAS</p>
+            <h2>Comparativas para decidir rápido</h2>
+          </div>
+        </div>
+        <div class="guides">
+          <article><span>📱</span><h3>Celulares económicos</h3><p>Qué mirar antes de comprar un celular barato.</p><a href="#ofertas">Ver recomendaciones →</a></article>
+          <article><span>🎧</span><h3>Auriculares Bluetooth</h3><p>Batería, comodidad, micrófono y calidad de sonido.</p><a href="#ofertas">Ver recomendaciones →</a></article>
+          <article><span>🎮</span><h3>Accesorios gaming</h3><p>Periféricos que ofrecen buena relación precio-calidad.</p><a href="#ofertas">Ver recomendaciones →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="disclosure">
+      <div class="container">
+        <strong>ℹ️ Transparencia</strong>
+        <p>Este sitio puede participar en programas de afiliados. Si comprás mediante determinados enlaces, podemos recibir una comisión, sin costo adicional para vos.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="logo" href="#">Compra<span>Smart</span></a><p>Recomendaciones para comprar mejor.</p></div>
+      <div><a href="#ofertas">Productos</a><a href="#categorias">Categorías</a><a href="#comparativas">Comparativas</a></div>
+      <div><p>© 2026 CompraSmart</p><p class="muted">Los precios pueden cambiar. Verificá siempre el precio final en Mercado Libre.</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
