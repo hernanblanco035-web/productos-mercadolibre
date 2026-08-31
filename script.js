@@ -1,6 +1,6 @@
 const products=[
  {name:"Auriculares Bluetooth Pro",cat:"Audio",price:"$39.999",rating:"4,7",icon:"🎧",desc:"Buena batería, conexión inalámbrica y micrófono integrado.",url:"https://meli.la/18KeDbr"},
- {name:"Smartphone gama económica",cat:"Tecnología",price:"$189.999",rating:"4,6",icon:"📱",desc:"Una opción equilibrada para uso diario, redes y multimedia.",url:"TU_ENLACE_DE_AFILIADO_2"},
+ {name:"Celular Samsung Galaxy A16 128GB",cat:"Tecnología",price:"$304.000",rating:"4,6",icon:"📱",desc:"Celular Samsung Galaxy A16 de 128GB para uso diario, redes y multimedia.",url:"https://meli.la/1g28Y8c"},
  {name:"Mouse Gaming RGB",cat:"Gaming",price:"$24.999",rating:"4,8",icon:"🖱️",desc:"Sensor preciso y diseño pensado para sesiones largas.",url:"TU_ENLACE_DE_AFILIADO_3"},
  {name:"Teclado mecánico compacto",cat:"Gaming",price:"$49.999",rating:"4,7",icon:"⌨️",desc:"Formato compacto, switches mecánicos y retroiluminación.",url:"TU_ENLACE_DE_AFILIADO_4"},
  {name:"Parlante Bluetooth portátil",cat:"Audio",price:"$32.999",rating:"4,5",icon:"🔊",desc:"Portátil y práctico para escuchar música en cualquier lugar.",url:"TU_ENLACE_DE_AFILIADO_5"},
