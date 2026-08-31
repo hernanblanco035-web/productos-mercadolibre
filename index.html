@@ -1,379 +1,817 @@
 <!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CompraSmart - Ofertas y Productos Recomendados</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CompraSmart - Ofertas y Productos Recomendados</title><link rel="stylesheet" href="styles.css"><style>
+/* ==============================
+   FALLBACK DE EMOJI
+   ============================== */
 
-<link rel="stylesheet" href="styles.css">
+.product-img {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f5f5f5;
+}
 
-</head><body><!-- ============================= -->
-<!-- NAVBAR -->
-<!-- ============================= -->
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
-<header class="header">
+.product-emoji {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 85px;
+    line-height: 1;
+}
 
-    <div class="container header-top">
+/* Evita que el emoji desaparezca */
+.product-emoji.hidden {
+    display: none;
+}
+</style></head><body><!-- ============================= --><!-- NAVBAR --><!-- ============================= --><header class="header"><div class="container header-top">
 
-        <a class="logo" href="#">
-            CompraSmart
-        </a>
+    <a class="logo" href="#">
+        CompraSmart
+    </a>
 
-        <form class="search" id="searchForm">
+    <form class="search" id="searchForm">
 
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Buscar productos, marcas y más..."
-                aria-label="Buscar"
-            >
-
-            <button
-                type="submit"
-                class="search-btn"
-                aria-label="Buscar"
-            >
-                🔍
-            </button>
-
-        </form>
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar productos, marcas y más..."
+            aria-label="Buscar"
+        >
 
         <button
-            class="menu"
-            aria-label="Abrir menú"
-            type="button"
+            type="submit"
+            class="search-btn"
+            aria-label="Buscar"
         >
-            ☰
+            🔍
+        </button>
+
+    </form>
+
+    <button
+        class="menu"
+        aria-label="Abrir menú"
+        type="button"
+    >
+        ☰
+    </button>
+
+</div>
+
+<div class="container header-bottom">
+
+    <nav class="nav-links">
+
+        <a href="#ofertas" class="active">
+            Ofertas
+        </a>
+
+        <a href="#categorias">
+            Categorías
+        </a>
+
+        <a href="#comparativas">
+            Comparativas
+        </a>
+
+    </nav>
+
+</div>
+
+</header><!-- ============================= --><!-- CONTENIDO --><!-- ============================= --><main><section class="hero"><div class="container">
+
+    <div class="quick-tags">
+
+        <span>Buscar:</span>
+
+        <button type="button" data-category="Audio">
+            Audio
+        </button>
+
+        <button type="button" data-category="Celulares">
+            Celulares
+        </button>
+
+        <button type="button" data-category="Hogar">
+            Hogar
+        </button>
+
+        <button type="button" data-category="Informática">
+            Informática
+        </button>
+
+        <button type="button" data-category="Herramientas">
+            Herramientas
+        </button>
+
+        <button type="button" data-category="Belleza">
+            Belleza
         </button>
 
     </div>
 
+</div>
 
-    <div class="container header-bottom">
+</section><!-- ============================= --><!-- PRODUCTOS --><!-- ============================= --><section class="section" id="ofertas"><div class="container">
 
-        <nav class="nav-links">
+    <div class="section-head">
 
-            <a href="#ofertas" class="active">
-                Ofertas
-            </a>
+        <h2>
+            Productos recomendados
+        </h2>
 
-            <a href="#categorias">
-                Categorías
-            </a>
-
-            <a href="#comparativas">
-                Comparativas
-            </a>
-
-        </nav>
+        <span
+            class="count"
+            id="productCount"
+        >
+            Cargando productos...
+        </span>
 
     </div>
 
-</header>
+    <div
+        class="product-grid"
+        id="products"
+    ></div>
+
+    <div
+        id="noResults"
+        style="display:none; text-align:center; padding:40px 20px;"
+    >
+
+        <h3>
+            No encontramos productos
+        </h3>
+
+        <p>
+            Probá con otro nombre o categoría.
+        </p>
+
+    </div>
+
+</div>
+
+</section><!-- ============================= --><!-- CATEGORÍAS --><!-- ============================= --><section class="section" id="categorias"><div class="container">
+
+    <div class="section-head">
+
+        <h2>
+            Categorías
+        </h2>
+
+    </div>
+
+    <div class="quick-tags">
+
+        <button type="button" data-category="Audio">
+            🎧 Audio
+        </button>
+
+        <button type="button" data-category="Celulares">
+            📱 Celulares
+        </button>
+
+        <button type="button" data-category="Gaming">
+            🎮 Gaming
+        </button>
+
+        <button type="button" data-category="Hogar">
+            🏠 Hogar
+        </button>
+
+        <button type="button" data-category="Informática">
+            💻 Informática
+        </button>
+
+        <button type="button" data-category="Herramientas">
+            🔧 Herramientas
+        </button>
+
+        <button type="button" data-category="Belleza">
+            🧴 Belleza
+        </button>
+
+        <button type="button" data-category="Seguridad">
+            📷 Seguridad
+        </button>
+
+        <button type="button" data-category="Tecnología">
+            🛰️ Tecnología
+        </button>
+
+        <button type="button" data-category="Juguetes">
+            🧸 Juguetes
+        </button>
+
+    </div>
+
+</div>
+
+</section><!-- ============================= --><!-- COMPARATIVAS --><!-- ============================= --><section class="section" id="comparativas"><div class="container">
+
+    <div class="section-head">
+
+        <h2>
+            Comparativas
+        </h2>
+
+    </div>
+
+    <p>
+        Próximamente vas a poder comparar productos
+        y encontrar la mejor opción.
+    </p>
+
+</div>
+
+</section></main><!-- ============================= --><!-- JAVASCRIPT --><!-- ============================= --><script>
+
+const products = [
+
+    {
+        name:"Xiaomi Redmi Buds 6 Play Bluetooth",
+        cat:"Audio",
+        price:"$33.000",
+        icon:"🎧",
+        desc:"Auriculares inalámbricos Xiaomi Redmi Buds 6 Play con conexión Bluetooth.",
+        url:"https://meli.la/18KeDbr"
+    },
+
+    {
+        name:"Samsung Galaxy A16 128GB",
+        cat:"Celulares",
+        price:"$304.000",
+        icon:"📱",
+        desc:"Smartphone Samsung Galaxy A16 con 128GB de almacenamiento.",
+        url:"https://meli.la/1g28Y8c"
+    },
+
+    {
+        name:"Mouse Gamer X11 Attack Shark Tri Mode 22000 DPI PAW3311 Dock - Negro",
+        cat:"Gaming",
+        price:"$48.299",
+        icon:"🖱️",
+        desc:"Mouse gamer Attack Shark X11 con conexión Tri Mode, sensor PAW3311 y hasta 22000 DPI.",
+        url:"https://meli.la/2VCrUV8"
+    },
+
+    {
+        name:"Kit de Barbería Peluquería Salón Capa Tijeras Cepillo Peines Estuche Unisex Veoquiero",
+        cat:"Belleza",
+        price:"$25.999",
+        icon:"✂️",
+        desc:"Kit completo de barbería y peluquería con capa, tijeras, cepillos, peines y estuche.",
+        url:"https://meli.la/1nB52Zz"
+    },
+
+    {
+        name:"Taladro Percutor de Mano Eléctrico Pektra 750W 13mm 3000RPM",
+        cat:"Herramientas",
+        price:"$44.619",
+        icon:"🔧",
+        desc:"Taladro percutor eléctrico Pektra de 750W.",
+        url:"https://meli.la/2eCmVA8"
+    },
+
+    {
+        name:"Moto G06 64GB NFC Tapestry",
+        cat:"Celulares",
+        price:"$214.999",
+        icon:"📱",
+        desc:"Motorola Moto G06 con 64GB de almacenamiento y NFC.",
+        url:"https://meli.la/2bDKX34"
+    },
+
+    {
+        name:"Tensiómetro Digital de Brazo Bluetooth Femmto",
+        cat:"Salud",
+        price:"$32.999",
+        icon:"🩺",
+        desc:"Tensiómetro digital automático de brazo con Bluetooth y batería recargable USB.",
+        url:"https://meli.la/1zzoW3Z"
+    },
+
+    {
+        name:"Sérum La Roche-Posay Mela B3 Antimanchas con Niacinamida 30ml",
+        cat:"Belleza",
+        price:"$65.000",
+        icon:"🧴",
+        desc:"Sérum facial Mela B3 con niacinamida.",
+        url:"https://meli.la/2vhtP86"
+    },
+
+    {
+        name:"Kit 3 Cámaras de Seguridad Geotek 3MP IP WiFi Exterior",
+        cat:"Seguridad",
+        price:"$120.806",
+        icon:"📷",
+        desc:"Kit de 3 cámaras Geotek 3MP WiFi para exterior.",
+        url:"https://meli.la/153SzVN"
+    },
+
+    {
+        name:"Hidrolavadora Eléctrica Trent HLT307 1400W 1600 PSI 110 Bar",
+        cat:"Herramientas",
+        price:"$98.660",
+        icon:"🧼",
+        desc:"Hidrolavadora eléctrica Trent de 1400W con accesorios.",
+        url:"https://meli.la/2aSLhoE"
+    },
+
+    {
+        name:"Pava Eléctrica Codini P18HAN 1.8 Litros",
+        cat:"Hogar",
+        price:"$15.489",
+        icon:"🫖",
+        desc:"Pava eléctrica Codini de acero inoxidable de 1,8 litros.",
+        url:"https://meli.la/2asWhC1"
+    },
+
+    {
+        name:"Notebook Exo Smart T38 Intel N4020 4GB SSD 128GB Windows 11",
+        cat:"Informática",
+        price:"$309.999",
+        icon:"💻",
+        desc:"Notebook Exo Smart T38 con Intel N4020, 4GB RAM y SSD de 128GB.",
+        url:"https://meli.la/118PRim"
+    },
+
+    {
+        name:"Combo Taladro 750W y Amoladora Angular 115mm 720W Konan Bric",
+        cat:"Herramientas",
+        price:"$88.019",
+        icon:"🔧",
+        desc:"Combo Konan Bric con taladro y amoladora angular.",
+        url:"https://meli.la/1bSKkmY"
+    },
+
+    {
+        name:"Crema Líquida Glass Skin Revitalift 50g L'Oréal Paris",
+        cat:"Belleza",
+        price:"$32.893",
+        icon:"🧴",
+        desc:"Crema líquida Glass Skin Revitalift de L'Oréal Paris.",
+        url:"https://meli.la/1AukJJM"
+    },
+
+    {
+        name:"Gel Limpiador Crema Hidratante Anti Imperfecciones Garnier 250ml",
+        cat:"Belleza",
+        price:"$24.990",
+        icon:"🧴",
+        desc:"Gel limpiador Garnier de 250ml.",
+        url:"https://meli.la/18cWNc2"
+    },
+
+    {
+        name:"Pistola Masajeadora Gadnic 6 Velocidades 2500 RPM 50W",
+        cat:"Hogar",
+        price:"$22.799",
+        icon:"💆",
+        desc:"Pistola masajeadora Gadnic con 6 velocidades y 4 cabezales.",
+        url:"https://meli.la/2URwMwJ"
+    },
+
+    {
+        name:"Planchita de Cabello Profesional Allure PL1010AP Azul",
+        cat:"Belleza",
+        price:"$19.990",
+        icon:"💇",
+        desc:"Planchita profesional Allure PL1010AP color azul.",
+        url:"https://meli.la/1GUReH6"
+    },
+
+    {
+        name:"Notebook Philco N14P4020NS 14.1 Intel Celeron 4GB 128GB SSD Windows 11",
+        cat:"Informática",
+        price:"$549.999",
+        icon:"💻",
+        desc:"Notebook Philco de 14,1 pulgadas con 4GB RAM y SSD de 128GB.",
+        url:"https://meli.la/2jbyJ4C"
+    },
+
+    {
+        name:"Samsung Galaxy A07 64GB 4GB RAM Negro",
+        cat:"Celulares",
+        price:"$214.699",
+        icon:"📱",
+        desc:"Samsung Galaxy A07 con 64GB y 4GB de RAM.",
+        url:"https://meli.la/13pnr6u"
+    },
+
+    {
+        name:"Audífonos Redragon Ire Pro H848 Bluetooth USB Recargable Negro",
+        cat:"Audio",
+        price:"$83.807",
+        icon:"🎧",
+        desc:"Audífonos Redragon H848 Bluetooth recargables.",
+        url:"https://meli.la/2gCvVqF"
+    },
+
+    {
+        name:"Motorola Edge 60 Fusion Dual SIM 8GB 256GB Azul",
+        cat:"Celulares",
+        price:"$539.999",
+        icon:"📱",
+        desc:"Motorola Edge 60 Fusion Dual SIM con 8GB RAM y 256GB.",
+        url:"https://meli.la/1MGRG7p"
+    },
+
+    {
+        name:"Moto G77 Shaded Spruce",
+        cat:"Celulares",
+        price:"$567.999",
+        icon:"📱",
+        desc:"Motorola Moto G77 color Shaded Spruce.",
+        url:"https://meli.la/2KAWqcC"
+    },
+
+    {
+        name:"Motorola Moto G15 128GB 8GB RAM Dual SIM",
+        cat:"Celulares",
+        price:"$339.999",
+        icon:"📱",
+        desc:"Motorola Moto G15 con 128GB, 8GB RAM y Dual SIM.",
+        url:"https://meli.la/2hVZUuH"
+    },
+
+    {
+        name:"Cámara WiFi Imou Cruiser SE+ 3MP Exterior Blanco",
+        cat:"Seguridad",
+        price:"$73.000",
+        icon:"📷",
+        desc:"Cámara Imou Cruiser SE+ 3MP para exterior.",
+        url:"https://meli.la/2jZPrWT"
+    },
+
+    {
+        name:"Bomba de Agua Presurizadora PRE1 Vasser Motorarg 120W 220V",
+        cat:"Hogar",
+        price:"$49.600",
+        icon:"💧",
+        desc:"Bomba presurizadora Vasser Motorarg PRE1 de 120W.",
+        url:"https://meli.la/27SUDRk"
+    },
+
+    {
+        name:"Kit Starlink de Internet Vía Satélite Estándar V4",
+        cat:"Tecnología",
+        price:"$499.999",
+        icon:"🛰️",
+        desc:"Kit Starlink Estándar V4 para Internet vía satélite.",
+        url:"https://meli.la/2HEw8cV"
+    },
+
+    {
+        name:"Grand Theft Auto VI GTA VI PS5",
+        cat:"Gaming",
+        price:"$219.999",
+        icon:"🎮",
+        desc:"Grand Theft Auto VI para PlayStation 5.",
+        url:"https://meli.la/1Tefxri"
+    },
+
+    {
+        name:"Xiaomi Note 15 Pro 8GB RAM 256GB ROM 4G LTE 200MP Negro",
+        cat:"Celulares",
+        price:"$569.999",
+        icon:"📱",
+        desc:"Xiaomi Note 15 Pro con 8GB RAM, 256GB y cámara de 200MP.",
+        url:"https://meli.la/14jZNhF"
+    },
+
+    {
+        name:"Set X2 Sillas de Oficina Ergonómicas Eco Cuero Negro",
+        cat:"Hogar",
+        price:"$269.999",
+        icon:"🪑",
+        desc:"Set de 2 sillas ergonómicas para oficina.",
+        url:"https://meli.la/12vHPWr"
+    },
+
+    {
+        name:"Caballo Saltarín Inflable de Goma Caballito Gigante SC Full",
+        cat:"Juguetes",
+        price:"$47.347",
+        icon:"🐴",
+        desc:"Caballo saltarín inflable de goma.",
+        url:"https://meli.la/2PShxeB"
+    },
+
+    {
+        name:"Purificador de Agua Sobre Mesada con Filtro para Canilla",
+        cat:"Hogar",
+        price:"$59.990",
+        icon:"💧",
+        desc:"Purificador de agua sobre mesada que reduce cloro.",
+        url:"https://meli.la/2uz9sW2"
+    },
+
+    {
+        name:"Barra Luz LED 50cm Recargable con Sensor de Movimiento",
+        cat:"Hogar",
+        price:"$7.893",
+        icon:"💡",
+        desc:"Barra LED recargable de 50cm con sensor de movimiento.",
+        url:"https://meli.la/1BHSsh3"
+    },
+
+    {
+        name:"Colchón en Caja YOLO by Simmons 2 Plazas 190x140",
+        cat:"Hogar",
+        price:"$414.427",
+        icon:"🛏️",
+        desc:"Colchón YOLO by Simmons de 2 plazas.",
+        url:"https://meli.la/2aDf1kN"
+    },
+
+    {
+        name:"Protector Solar L'Oréal Paris UV Defender FPS50+ Tono Claro 40ml",
+        cat:"Belleza",
+        price:"$34.557",
+        icon:"☀️",
+        desc:"Protector solar facial UV Defender FPS50+.",
+        url:"https://meli.la/2f8zHHP"
+    },
+
+    {
+        name:"Afeitadora Eléctrica Hombre Shaver VGR V-325 Recargable",
+        cat:"Belleza",
+        price:"$45.590",
+        icon:"🪒",
+        desc:"Afeitadora VGR V-325 inalámbrica y recargable.",
+        url:"https://meli.la/1yiuPkC"
+    }
+
+];
 
 
-<!-- ============================= -->
-<!-- CONTENIDO PRINCIPAL -->
-<!-- ============================= -->
+/* ==============================
+   CREAR TARJETA
+   ============================== */
 
-<main>
+function createProductCard(product) {
 
-    <!-- HERO -->
+    const safeName =
+        product.name
+        .replace(/"/g, "&quot;");
 
-    <section class="hero">
+    const safeDesc =
+        product.desc
+        .replace(/"/g, "&quot;");
 
-        <div class="container">
+    const emoji =
+        product.icon || "🛍️";
 
-            <div class="quick-tags">
+    return `
 
-                <span>Buscar:</span>
+        <article class="product">
 
-                <button type="button" data-category="Audio">
-                    Audio
-                </button>
+            <div class="product-img">
 
-                <button type="button" data-category="Celulares">
-                    Celulares
-                </button>
+                <!-- EMOJI DE RESPALDO -->
+                <div
+                    class="product-emoji"
+                    id="emoji-${encodeURIComponent(product.url)}"
+                >
+                    ${emoji}
+                </div>
 
-                <button type="button" data-category="Hogar">
-                    Hogar
-                </button>
-
-                <button type="button" data-category="Informática">
-                    Informática
-                </button>
-
-                <button type="button" data-category="Herramientas">
-                    Herramientas
-                </button>
-
-                <button type="button" data-category="Belleza">
-                    Belleza
-                </button>
+                <!-- IMAGEN REAL -->
+                <img
+                    src=""
+                    data-product-url="${product.url}"
+                    data-emoji-id="emoji-${encodeURIComponent(product.url)}"
+                    alt="${safeName}"
+                    loading="lazy"
+                    style="display:none;"
+                >
 
             </div>
 
-        </div>
+            <div class="product-body">
 
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- PRODUCTOS -->
-    <!-- ============================= -->
-
-    <section
-        class="section"
-        id="ofertas"
-    >
-
-        <div class="container">
-
-            <div class="section-head">
-
-                <h2>
-                    Productos recomendados
-                </h2>
-
-                <span
-                    class="count"
-                    id="productCount"
-                >
-                    Cargando productos...
+                <span class="tag-promo">
+                    ${product.cat}
                 </span>
 
-            </div>
-
-
-            <!--
-                IMPORTANTE:
-                JavaScript coloca TODOS los productos aquí.
-            -->
-
-            <div
-                class="product-grid"
-                id="products"
-            ></div>
-
-
-            <!-- MENSAJE SI NO HAY RESULTADOS -->
-
-            <div
-                id="noResults"
-                style="display:none; text-align:center; padding:40px 20px;"
-            >
-
                 <h3>
-                    No encontramos productos
+                    ${product.name}
                 </h3>
 
-                <p>
-                    Probá con otro nombre o categoría.
+                <p class="product-desc">
+                    ${safeDesc}
                 </p>
 
-            </div>
+                <div class="price-container">
 
-        </div>
+                    <span class="price">
+                        ${product.price}
+                    </span>
 
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- CATEGORÍAS -->
-    <!-- ============================= -->
-
-    <section
-        class="section"
-        id="categorias"
-    >
-
-        <div class="container">
-
-            <div class="section-head">
-
-                <h2>
-                    Categorías
-                </h2>
-
-            </div>
-
-            <div class="quick-tags">
-
-                <button type="button" data-category="Audio">
-                    🎧 Audio
-                </button>
-
-                <button type="button" data-category="Celulares">
-                    📱 Celulares
-                </button>
-
-                <button type="button" data-category="Gaming">
-                    🎮 Gaming
-                </button>
-
-                <button type="button" data-category="Hogar">
-                    🏠 Hogar
-                </button>
-
-                <button type="button" data-category="Informática">
-                    💻 Informática
-                </button>
-
-                <button type="button" data-category="Herramientas">
-                    🔧 Herramientas
-                </button>
-
-                <button type="button" data-category="Belleza">
-                    🧴 Belleza
-                </button>
-
-                <button type="button" data-category="Seguridad">
-                    📷 Seguridad
-                </button>
-
-                <button type="button" data-category="Tecnología">
-                    🛰️ Tecnología
-                </button>
-
-                <button type="button" data-category="Juguetes">
-                    🧸 Juguetes
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ============================= -->
-    <!-- COMPARATIVAS -->
-    <!-- ============================= -->
-
-    <section
-        class="section"
-        id="comparativas"
-    >
-
-        <div class="container">
-
-            <div class="section-head">
-
-                <h2>
-                    Comparativas
-                </h2>
-
-            </div>
-
-            <p>
-                Próximamente vas a poder comparar productos
-                y encontrar la mejor opción.
-            </p>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- ============================= -->
-<!-- JAVASCRIPT -->
-<!-- ============================= -->
-
-<script>
-    const products = [
-      {name:"Xiaomi Redmi Buds 6 Play Bluetooth",cat:"Audio",price:"$33.000",icon:"🎧",desc:"Auriculares inalámbricos Xiaomi Redmi Buds 6 Play con conexión Bluetooth.",url:"https://meli.la/18KeDbr"},
-      {name:"Samsung Galaxy A16 128GB",cat:"Celulares",price:"$304.000",icon:"📱",desc:"Smartphone Samsung Galaxy A16 con 128GB de almacenamiento.",url:"https://meli.la/1g28Y8c"},
-      {name:"Mouse Gamer X11 Attack Shark Tri Mode 22000 DPI PAW3311 Dock - Negro",cat:"Gaming",price:"$48.299",icon:"🖱️",desc:"Mouse gamer Attack Shark X11 con conexión Tri Mode, sensor PAW3311 y hasta 22000 DPI.",url:"https://meli.la/2VCrUV8"},
-      {name:"Kit de Barbería Peluquería Salón Capa Tijeras Cepillo Peines Estuche Unisex Veoquiero",cat:"Belleza",price:"$25.999",icon:"✂️",desc:"Kit completo de barbería y peluquería con capa, tijeras, cepillos, peines y estuche.",url:"https://meli.la/1nB52Zz"},
-      {name:"Taladro Percutor de Mano Eléctrico Pektra 750W 13mm 3000RPM",cat:"Herramientas",price:"$44.619",icon:"🔧",desc:"Taladro percutor eléctrico Pektra de 750W.",url:"https://meli.la/2eCmVA8"},
-      {name:"Moto G06 64GB NFC Tapestry",cat:"Celulares",price:"$214.999",icon:"📱",desc:"Motorola Moto G06 con 64GB de almacenamiento y NFC.",url:"https://meli.la/2bDKX34"},
-      {name:"Tensiómetro Digital de Brazo Bluetooth Femmto",cat:"Salud",price:"$32.999",icon:"🩺",desc:"Tensiómetro digital automático de brazo con Bluetooth y batería recargable USB.",url:"https://meli.la/1zzoW3Z"},
-      {name:"Sérum La Roche-Posay Mela B3 Antimanchas con Niacinamida 30ml",cat:"Belleza",price:"$65.000",icon:"🧴",desc:"Sérum facial Mela B3 con niacinamida.",url:"https://meli.la/2vhtP86"},
-      {name:"Kit 3 Cámaras de Seguridad Geotek 3MP IP WiFi Exterior",cat:"Seguridad",price:"$120.806",icon:"📷",desc:"Kit de 3 cámaras Geotek 3MP WiFi para exterior.",url:"https://meli.la/153SzVN"},
-      {name:"Hidrolavadora Eléctrica Trent HLT307 1400W 1600 PSI 110 Bar",cat:"Herramientas",price:"$98.660",icon:"🧼",desc:"Hidrolavadora eléctrica Trent de 1400W con accesorios.",url:"https://meli.la/2aSLhoE"},
-      {name:"Pava Eléctrica Codini P18HAN 1.8 Litros",cat:"Hogar",price:"$15.489",icon:"🫖",desc:"Pava eléctrica Codini de acero inoxidable de 1,8 litros.",url:"https://meli.la/2asWhC1"},
-      {name:"Notebook Exo Smart T38 Intel N4020 4GB SSD 128GB Windows 11",cat:"Informática",price:"$309.999",icon:"💻",desc:"Notebook Exo Smart T38 con Intel N4020, 4GB RAM y SSD de 128GB.",url:"https://meli.la/118PRim"},
-      {name:"Combo Taladro 750W y Amoladora Angular 115mm 720W Konan Bric",cat:"Herramientas",price:"$88.019",icon:"🔧",desc:"Combo Konan Bric con taladro y amoladora angular.",url:"https://meli.la/1bSKkmY"},
-      {name:"Crema Líquida Glass Skin Revitalift 50g L'Oréal Paris",cat:"Belleza",price:"$32.893",icon:"🧴",desc:"Crema líquida Glass Skin Revitalift de L'Oréal Paris.",url:"https://meli.la/1AukJJM"},
-      {name:"Gel Limpiador Crema Hidratante Anti Imperfecciones Garnier 250ml",cat:"Belleza",price:"$24.990",icon:"🧴",desc:"Gel limpiador Garnier de 250ml.",url:"https://meli.la/18cWNc2"},
-      {name:"Pistola Masajeadora Gadnic 6 Velocidades 2500 RPM 50W",cat:"Hogar",price:"$22.799",icon:"💆",desc:"Pistola masajeadora Gadnic con 6 velocidades y 4 cabezales.",url:"https://meli.la/2URwMwJ"},
-      {name:"Planchita de Cabello Profesional Allure PL1010AP Azul",cat:"Belleza",price:"$19.990",icon:"💇",desc:"Planchita profesional Allure PL1010AP color azul.",url:"https://meli.la/1GUReH6"},
-      {name:"Notebook Philco N14P4020NS 14.1 Intel Celeron 4GB 128GB SSD Windows 11",cat:"Informática",price:"$549.999",icon:"💻",desc:"Notebook Philco de 14,1 pulgadas con 4GB RAM y SSD de 128GB.",url:"https://meli.la/2jbyJ4C"},
-      {name:"Samsung Galaxy A07 64GB 4GB RAM Negro",cat:"Celulares",price:"$214.699",icon:"📱",desc:"Samsung Galaxy A07 con 64GB y 4GB de RAM.",url:"https://meli.la/13pnr6u"},
-      {name:"Audífonos Redragon Ire Pro H848 Bluetooth USB Recargable Negro",cat:"Audio",price:"$83.807",icon:"🎧",desc:"Audífonos Redragon H848 Bluetooth recargables.",url:"https://meli.la/2gCvVqF"},
-      {name:"Motorola Edge 60 Fusion Dual SIM 8GB 256GB Azul",cat:"Celulares",price:"$539.999",icon:"📱",desc:"Motorola Edge 60 Fusion Dual SIM con 8GB RAM y 256GB.",url:"https://meli.la/1MGRG7p"},
-      {name:"Moto G77 Shaded Spruce",cat:"Celulares",price:"$567.999",icon:"📱",desc:"Motorola Moto G77 color Shaded Spruce.",url:"https://meli.la/2KAWqcC"},
-      {name:"Motorola Moto G15 128GB 8GB RAM Dual SIM",cat:"Celulares",price:"$339.999",icon:"📱",desc:"Motorola Moto G15 con 128GB, 8GB RAM y Dual SIM.",url:"https://meli.la/2hVZUuH"},
-      {name:"Cámara WiFi Imou Cruiser SE+ 3MP Exterior Blanco",cat:"Seguridad",price:"$73.000",icon:"📷",desc:"Cámara Imou Cruiser SE+ 3MP para exterior.",url:"https://meli.la/2jZPrWT"},
-      {name:"Bomba de Agua Presurizadora PRE1 Vasser Motorarg 120W 220V",cat:"Hogar",price:"$49.600",icon:"💧",desc:"Bomba presurizadora Vasser Motorarg PRE1 de 120W.",url:"https://meli.la/27SUDRk"},
-      {name:"Kit Starlink de Internet Vía Satélite Estándar V4",cat:"Tecnología",price:"$499.999",icon:"🛰️",desc:"Kit Starlink Estándar V4 para Internet vía satélite.",url:"https://meli.la/2HEw8cV"},
-      {name:"Grand Theft Auto VI GTA VI PS5",cat:"Gaming",price:"$219.999",icon:"🎮",desc:"Grand Theft Auto VI para PlayStation 5.",url:"https://meli.la/1Tefxri"},
-      {name:"Xiaomi Note 15 Pro 8GB RAM 256GB ROM 4G LTE 200MP Negro",cat:"Celulares",price:"$569.999",icon:"📱",desc:"Xiaomi Note 15 Pro con 8GB RAM, 256GB y cámara de 200MP.",url:"https://meli.la/14jZNhF"},
-      {name:"Set X2 Sillas de Oficina Ergonómicas Eco Cuero Negro",cat:"Hogar",price:"$269.999",icon:"🪑",desc:"Set de 2 sillas ergonómicas para oficina.",url:"https://meli.la/12vHPWr"},
-      {name:"Caballo Saltarín Inflable de Goma Caballito Gigante SC Full",cat:"Juguetes",price:"$47.347",icon:"🐴",desc:"Caballo saltarín inflable de goma.",url:"https://meli.la/2PShxeB"},
-      {name:"Purificador de Agua Sobre Mesada con Filtro para Canilla",cat:"Hogar",price:"$59.990",icon:"💧",desc:"Purificador de agua sobre mesada que reduce cloro.",url:"https://meli.la/2uz9sW2"},
-      {name:"Barra Luz LED 50cm Recargable con Sensor de Movimiento",cat:"Hogar",price:"$7.893",icon:"💡",desc:"Barra LED recargable de 50cm con sensor de movimiento.",url:"https://meli.la/1BHSsh3"},
-      {name:"Colchón en Caja YOLO by Simmons 2 Plazas 190x140",cat:"Hogar",price:"$414.427",icon:"🛏️",desc:"Colchón YOLO by Simmons de 2 plazas.",url:"https://meli.la/2aDf1kN"},
-      {name:"Protector Solar L'Oréal Paris UV Defender FPS50+ Tono Claro 40ml",cat:"Belleza",price:"$34.557",icon:"☀️",desc:"Protector solar facial UV Defender FPS50+.",url:"https://meli.la/2f8zHHP"},
-      {name:"Afeitadora Eléctrica Hombre Shaver VGR V-325 Recargable",cat:"Belleza",price:"$45.590",icon:"🪒",desc:"Afeitadora VGR V-325 inalámbrica y recargable.",url:"https://meli.la/1yiuPkC"}
-    ];
-
-    function getFallbackImage(product) {
-        return `https://placehold.co/600x600?text=${encodeURIComponent(product.icon)}`;
-    }
-
-    function createProductCard(product, image = getFallbackImage(product)) {
-        return `
-            <article class="product">
-                <div class="product-img">
-                    <img src="${image}" data-product-url="${product.url}" alt="${product.name}" loading="lazy" style="width:100%;height:100%;object-fit:contain;" onerror="this.onerror=null;this.src='${getFallbackImage(product)}'">
                 </div>
-                <div class="product-body">
-                    <span class="tag-promo">${product.cat}</span>
-                    <h3>${product.name}</h3>
-                    <p class="product-desc">${product.desc}</p>
-                    <div class="price-container"><span class="price">${product.price}</span></div>
-                    <span class="envio-gratis">Producto recomendado</span>
-                    <a href="${product.url}" target="_blank" rel="noopener noreferrer sponsored" class="cta-link">Ver en Mercado Libre</a>
-                </div>
-            </article>
-        `;
+
+                <span class="envio-gratis">
+                    Producto recomendado
+                </span>
+
+                <a
+                    href="${product.url}"
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                    class="cta-link"
+                >
+                    Ver en Mercado Libre
+                </a>
+
+            </div>
+
+        </article>
+
+    `;
+}
+
+
+/* ==============================
+   CARGAR IMAGEN
+   ============================== */
+
+function loadProductImage(img) {
+
+    const productUrl =
+        img.dataset.productUrl;
+
+    const emoji =
+        document.getElementById(
+            img.dataset.emojiId
+        );
+
+    if (!productUrl) {
+        return;
     }
 
-    function renderProducts(list = products) {
-        const container = document.querySelector("#products");
-        if (!container) return;
+    const workerImage =
+        `/api/product-image?url=${encodeURIComponent(productUrl)}`;
 
-        container.innerHTML = list.map(product => createProductCard(product)).join("");
-
-        container.querySelectorAll("img[data-product-url]").forEach(img => {
-            const productUrl = img.dataset.productUrl;
-            const workerImage = `/api/product-image?url=${encodeURIComponent(productUrl)}`;
-            img.src = workerImage;
-        });
-
-        const count = document.querySelector("#productCount");
-        if (count) count.textContent = list.length + " productos";
-
-        const noResults = document.querySelector("#noResults");
-        if (noResults) noResults.style.display = list.length === 0 ? "block" : "none";
-    }
-
-    window.products = products;
-    window.renderProducts = renderProducts;
-</script>
-
-
-<script>
-
-    document.addEventListener("DOMContentLoaded", () => {
+    img.onload = function() {
 
         /*
-         * ============================
-         * MENÚ MÓVIL
-         * ============================
+         * Si la imagen se carga correctamente:
+         * ocultamos el emoji.
          */
+
+        img.style.display = "block";
+
+        if (emoji) {
+            emoji.classList.add("hidden");
+        }
+
+    };
+
+
+    img.onerror = function() {
+
+        /*
+         * Si la imagen falla:
+         * dejamos visible el emoji.
+         */
+
+        img.style.display = "none";
+
+        if (emoji) {
+            emoji.classList.remove("hidden");
+        }
+
+    };
+
+
+    /*
+     * IMPORTANTE:
+     * El producto ya está en pantalla
+     * antes de intentar cargar la imagen.
+     */
+
+    img.src = workerImage;
+}
+
+
+/* ==============================
+   MOSTRAR PRODUCTOS
+   ============================== */
+
+function renderProducts(list = products) {
+
+    const container =
+        document.querySelector("#products");
+
+    if (!container) {
+        return;
+    }
+
+
+    /*
+     * PRIMERO:
+     * mostramos TODOS los productos.
+     */
+
+    container.innerHTML =
+        list
+        .map(product => createProductCard(product))
+        .join("");
+
+
+    /*
+     * DESPUÉS:
+     * intentamos cargar las imágenes.
+     */
+
+    const images =
+        container.querySelectorAll(
+            "img[data-product-url]"
+        );
+
+
+    images.forEach(img => {
+
+        loadProductImage(img);
+
+    });
+
+
+    /*
+     * CONTADOR
+     */
+
+    const count =
+        document.querySelector("#productCount");
+
+    if (count) {
+
+        count.textContent =
+            list.length +
+            (list.length === 1
+                ? " producto"
+                : " productos");
+
+    }
+
+
+    /*
+     * SIN RESULTADOS
+     */
+
+    const noResults =
+        document.querySelector("#noResults");
+
+    if (noResults) {
+
+        noResults.style.display =
+            list.length === 0
+                ? "block"
+                : "none";
+
+    }
+
+}
+
+
+/* ==============================
+   VARIABLES GLOBALES
+   ============================== */
+
+window.products =
+    products;
+
+window.renderProducts =
+    renderProducts;
+
+
+/* ==============================
+   INICIO
+   ============================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+
+        /* ==========================
+           MENÚ
+           ========================== */
 
         const menuBtn =
             document.querySelector(".menu");
@@ -384,20 +822,23 @@
 
         if (menuBtn && navLinks) {
 
-            menuBtn.addEventListener("click", () => {
+            menuBtn.addEventListener(
+                "click",
+                () => {
 
-                navLinks.classList.toggle("open");
+                    navLinks.classList.toggle(
+                        "open"
+                    );
 
-            });
+                }
+            );
 
         }
 
 
-        /*
-         * ============================
-         * BUSCADOR
-         * ============================
-         */
+        /* ==========================
+           BUSCADOR
+           ========================== */
 
         const searchForm =
             document.querySelector("#searchForm");
@@ -410,182 +851,12 @@
 
             searchForm.addEventListener(
                 "submit",
-                (event) => {
+                event => {
 
                     event.preventDefault();
+
 
                     const text =
                         searchInput.value
                         .trim()
-                        .toLowerCase();
-
-
-                    if (!text) {
-
-                        renderProducts(products);
-
-                        return;
-
-                    }
-
-
-                    const filtered =
-                        products.filter(product => {
-
-                            return (
-
-                                product.name
-                                    .toLowerCase()
-                                    .includes(text)
-
-                                ||
-
-                                product.desc
-                                    .toLowerCase()
-                                    .includes(text)
-
-                                ||
-
-                                product.cat
-                                    .toLowerCase()
-                                    .includes(text)
-
-                            );
-
-                        });
-
-
-                    renderProducts(filtered);
-
-
-                    const noResults =
-                        document.querySelector("#noResults");
-
-
-                    if (noResults) {
-
-                        noResults.style.display =
-                            filtered.length === 0
-                                ? "block"
-                                : "none";
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        /*
-         * ============================
-         * CATEGORÍAS
-         * ============================
-         */
-
-        const categoryButtons =
-            document.querySelectorAll(
-                "[data-category]"
-            );
-
-
-        categoryButtons.forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const category =
-                        button.dataset.category;
-
-
-                    const filtered =
-                        products.filter(product => {
-
-                            return product.cat === category;
-
-                        });
-
-
-                    renderProducts(filtered);
-
-
-                    const noResults =
-                        document.querySelector("#noResults");
-
-
-                    if (noResults) {
-
-                        noResults.style.display =
-                            filtered.length === 0
-                                ? "block"
-                                : "none";
-
-                    }
-
-
-                    const productsSection =
-                        document.querySelector("#ofertas");
-
-
-                    if (productsSection) {
-
-                        productsSection.scrollIntoView({
-                            behavior: "smooth"
-                        });
-
-                    }
-
-                }
-            );
-
-        });
-
-
-        /*
-         * ============================
-         * MOSTRAR TODOS LOS PRODUCTOS
-         * ============================
-         */
-
-        if (
-            typeof products !== "undefined" &&
-            typeof renderProducts === "function"
-        ) {
-
-            renderProducts(products);
-
-
-            const productCount =
-                document.querySelector("#productCount");
-
-
-            if (productCount) {
-
-                productCount.textContent =
-                    products.length +
-                    " productos";
-
-            }
-
-        } else {
-
-            console.error(
-                "No se encontró products.js o la variable products."
-            );
-
-
-            const container =
-                document.querySelector("#products");
-
-
-            if (container) {
-
-                container.innerHTML = `
-                    <p style="
-                        grid-column:1/-1;
-                        text-align:center;
-                        padding:40px;
-                    ">
-                        No se pudieron cargar los productos.
-     
+                        .toLowerCase
