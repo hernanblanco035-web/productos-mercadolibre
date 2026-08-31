@@ -397,4 +397,4 @@ document.addEventListener("DOMContentLoaded", () => {
 // También permite que el HTML llame a renderProducts()
 // directamente si el sitio ya tenía esa función configurada.
 window.products = products;
-window.renderProducts = renderProducts;];
+window.renderProducts = renderProducts;
